@@ -48,11 +48,11 @@ function App() {
         <Route path="/offer" element={<Offer />} />
         <Route
           path="/signup"
-          element={<Signup handleTokenAndId={handleTokenAndId} token={token} />}
+          element={<Signup handleTokenAndId={handleTokenAndId} />}
         />
         <Route
           path="/login"
-          element={<Login handleTokenAndId={handleTokenAndId} token={token} />}
+          element={<Login handleTokenAndId={handleTokenAndId} />}
         />
         <Route path="/publish" element={<Publish />} />
       </Routes>

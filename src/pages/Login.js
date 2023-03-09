@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const Login = ({ handleTokenAndId, token }) => {
+const Login = ({ handleTokenAndId }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const Login = ({ handleTokenAndId, token }) => {
         { email: email, password: password }
       );
       if (response.data.token) {
-        Cookies.set("token-vinted", token, { expires: 14 });
+        Cookies.set("token-vinted", response.data.token, { expires: 14 });
         handleTokenAndId(response.data.token, response.data._id);
         navigate("/");
       }
